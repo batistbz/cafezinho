@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Comfortaa';
+  background-color: #f3d5b5;
+}
+
+.nav {
+  height: 80px;
+  width: 100%;
+  background-color: #a55d2d;
+  position: relative;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 22px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+  margin: 10px;
+}
+
+.nav > .nav-links > a:hover {
+  color: #fea645;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+.nav-logo {
+  height: 140px;
+  margin-top: -30px;
+  margin-left: -10px;
+}
+
+.banner-img {
+  width: 100%;         /* faz a imagem ocupar toda a largura da tela */
+  height: auto;        /* mantém a proporção original */
+  display: block;      /* remove espaços embaixo da imagem */
+  margin: 0;           /* remove margens indesejadas */
+}
+
+/* ESTILIZAÇÃO DOS CARDS DE PRODUTO */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards se quebrem para a linha seguinte, se necessário */
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: space-evenly; /* Espaço uniforme entre os cards */
+  padding: 20px; /* Para dar uma margem interna ao container */
+}
+
+.card {
+  width: calc(25% - 20px); /* 4 cards por linha, com espaço entre eles */
+  height: 254px;
+  border-radius: 20px;
+  background: #e7bc91;
+  position: relative;
+  padding: 1.8rem;
+  border: 2px solid #a55d2d;
+  transition: 0.5s ease-out;
+  overflow: visible;
+}
+
+.card-details {
+  color: black;
+  height: 100%;
+  gap: .5em;
+  display: grid;
+  place-content: center;
+}
+
+.card-button {
+  transform: translate(-50%, 125%);
+  width: 60%;
+  border-radius: 1rem;
+  border: none;
+  background-color: #a55d2d;
+  color: #fff;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 15;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+.text-body {
+  color: white;
+}
+
+.text-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #a55d2d;
+}
+
+.card:hover {
+  border-color: #e7bc91;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
