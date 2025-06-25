@@ -125,10 +125,10 @@ body {
   width: calc(25% - 20px); /* 4 cards por linha, com espaço entre eles */
   height: 254px;
   border-radius: 20px;
-  background: #e7bc91;
+  background: #e3bf88;
   position: relative;
   padding: 1.8rem;
-  border: 2px solid #a55d2d;
+  border: 3px solid #a55d2d;
   transition: 0.5s ease-out;
   overflow: visible;
 }
